@@ -1,5 +1,16 @@
 <p>New user form</p>
 
+<%= form_tag "/users", method: "post" do %>
+  <p><%= label_tag 'user[username]', 'Username:' %></p>
+  <p><%= text_field_tag 'user[username]' %></p>
+  <p><%= label_tag 'user[username]', 'Email:' %></p>
+  <p><%= text_field_tag 'user[email]' %></p>
+  <p><%= label_tag 'user[password]', 'Password:' %></p>
+  <p><%= password_field_tag 'user[password]' %></p>
+  <p><%= submit_tag 'Join!' %></p>
+<% end %>
+
+<!--
 <form action="/users" method="post" accept-charset="UTF-8">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p><label for="username">Username:</label></p>
@@ -10,3 +21,5 @@
   <p><input id = "password" type="password" name="user[password]"></p>
   <p><input type="submit", value="Join!"></p>
 </form>
+-->
+
