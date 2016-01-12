@@ -1,4 +1,14 @@
 <!-- FORM_FOR FORM -->
+<% if @user.errors.any? %>
+  <p><%= pluralize(@user.errors.count, 'error') %> were found:</p>
+  
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @user do |f| %>
   <p><%= f.label :username, 'Username:' %></p>
   <p><%= f.text_field :username %></p>
